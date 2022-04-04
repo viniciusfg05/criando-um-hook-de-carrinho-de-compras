@@ -39,7 +39,7 @@ const Home = (): JSX.Element => {
 
      const data = response.data.map(product => ({
       ...product,
-      priceFormatted: formatPrice(product.price) //formatação
+      priceFormatted: formatPrice(product.price)
      }))
 
      setProducts(data);
@@ -49,30 +49,28 @@ const Home = (): JSX.Element => {
   }, []);
 
   function handleAddProduct(id: number) {
-    addProduct(id) //chama a função é passa o id
+    // TODO
   }
 
   return (
     <ProductList>
-      {products.map(product => (
-        <li key={product.id}>
-          <img src={product.image} alt={product.title} />
-          <strong>{product.title}</strong>
-          <span>{product.priceFormatted}</span>
-          <button
-            type="button"
-            data-testid="add-product-button"
-            onClick={() => handleAddProduct(product.id)}
-          >
-            <div data-testid="cart-product-quantity">
-              <MdAddShoppingCart size={16} color="#FFF" />
-              {cartItemsAmount[product.id] || 0}
-            </div>
-  
-            <span>ADICIONAR AO CARRINHO</span>
-          </button>
-        </li>
-      ))}
+      <li>
+        <img src="https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg" alt="Tênis de Caminhada Leve Confortável" />
+        <strong>Tênis de Caminhada Leve Confortável</strong>
+        <span>R$ 179,90</span>
+        <button
+          type="button"
+          data-testid="add-product-button"
+        onClick={() => handleAddProduct(product.id)}
+        >
+          <div data-testid="cart-product-quantity">
+            <MdAddShoppingCart size={16} color="#FFF" />
+            {cartItemsAmount[product.id] || 0} 2
+          </div>
+
+          <span>ADICIONAR AO CARRINHO</span>
+        </button>
+      </li>
     </ProductList>
   );
 };

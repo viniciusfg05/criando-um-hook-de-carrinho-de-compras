@@ -8,8 +8,6 @@ import { useCart } from '../../hooks/useCart';
 
 const Header = (): JSX.Element => {
   const { cart } = useCart();
-
-  //Mostra a quantidade de intens no carrinho 
   const cartSize = cart.length
 
   return (

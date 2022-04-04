@@ -34,7 +34,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     //criando um avariavel que vai buscar os dados no localStorege
   });
 
-
   const addProduct = async (productId: number) => {
     try {
       const updateCart = [...cart] //para permanece a imutabilidade do cart 
@@ -45,7 +44,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       const stockAmount = stock.data.amount; // pegando o amount do produto
       const currentAmount = productExits ? productExits.amount : 0; // se existr no carrinho eu pego a quantidade dele, se não é 0
       
-      const amount = currentAmount + 1; //quantidade desejada mais um
+      const amount = currentAmount + 1 //quantidade desejada mais um
 
       if(amount > stockAmount) { //se a quantidade que desejo add é maior que a quantidade em estoque deve falhar 
         toast.error('Quantidade solicitada fora de estoque');
@@ -67,9 +66,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
         updateCart.push(newProduct) // mandar os dados para o updateCart
 
+        setCart(updateCart) //salvar as informações no updateCart
+        localStorage.setItem('@RocketShoes:cart', JSON.stringify(updateCart)) //salvar no localStorege
       }
-      setCart(updateCart) //salvar as informações no updateCart
-      localStorage.setItem('@RocketShoes:cart', JSON.stringify(updateCart)) //salvar no localStorege
     } catch {
       toast.error('Erro na adição do produto');
     }
@@ -121,8 +120,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         setCart(updateCart)
         localStorage.setItem('@RocketShoes:cart', JSON.stringify(updateCart)) //salvar no localStorege
 
-      } else {
-        throw Error();
       }
     } catch {
       toast.error('Erro na alteração de quantidade do produto');

@@ -66,7 +66,7 @@ const Home = (): JSX.Element => {
           >
             <div data-testid="cart-product-quantity">
               <MdAddShoppingCart size={16} color="#FFF" />
-              {cartItemsAmount[product.id] || 0}
+              {cartItemsAmount[product.id] || 0} 2
             </div>
   
             <span>ADICIONAR AO CARRINHO</span>

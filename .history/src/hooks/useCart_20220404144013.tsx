@@ -34,7 +34,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     //criando um avariavel que vai buscar os dados no localStorege
   });
 
-
   const addProduct = async (productId: number) => {
     try {
       const updateCart = [...cart] //para permanece a imutabilidade do cart 

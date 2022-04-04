@@ -86,7 +86,7 @@ const Cart = (): JSX.Element => {
                     type="text"
                     data-testid="product-amount"
                     readOnly
-                    value={product.amount}
+                    value={2}
                   />
                   <button
                     type="button"
@@ -98,13 +98,13 @@ const Cart = (): JSX.Element => {
                 </div>
               </td>
               <td>
-                <strong>{product.subtotal}</strong>
+                <strong>R$ 359,80</strong>
               </td>
               <td>
                 <button
                   type="button"
                   data-testid="remove-product"
-                  onClick={() => handleRemoveProduct(product.id)}
+                // onClick={() => handleRemoveProduct(product.id)}
                 >
                   <MdDelete size={20} />
                 </button>
@@ -119,7 +119,7 @@ const Cart = (): JSX.Element => {
 
         <Total>
           <span>TOTAL</span>
-          <strong>{total}</strong>
+          <strong>R$ 359,80</strong>
         </Total>
       </footer>
     </Container>

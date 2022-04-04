@@ -54,19 +54,19 @@ const Home = (): JSX.Element => {
 
   return (
     <ProductList>
-      {products.map(product => (
+      {cart.map(product => (
         <li key={product.id}>
           <img src={product.image} alt={product.title} />
-          <strong>{product.title}</strong>
-          <span>{product.priceFormatted}</span>
+          <strong>Tênis de Caminhada Leve Confortável</strong>
+          <span>R$ 179,90</span>
           <button
             type="button"
             data-testid="add-product-button"
-            onClick={() => handleAddProduct(product.id)}
+          onClick={() => handleAddProduct(product.id)}
           >
             <div data-testid="cart-product-quantity">
               <MdAddShoppingCart size={16} color="#FFF" />
-              {cartItemsAmount[product.id] || 0}
+              {cartItemsAmount[product.id] || 0} 2
             </div>
   
             <span>ADICIONAR AO CARRINHO</span>
