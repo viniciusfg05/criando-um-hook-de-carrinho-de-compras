@@ -126,4 +126,4 @@ const Cart = (): JSX.Element => {
   );
 };
 
-export default Cart;
+export default Cart; 
